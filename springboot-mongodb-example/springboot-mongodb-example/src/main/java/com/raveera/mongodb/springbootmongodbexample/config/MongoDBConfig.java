@@ -21,14 +21,11 @@ public class MongoDBConfig {
 	 * 
 	 */
 	@Bean
-	CommandLineRunner commandLineRunner(UserRepository userRepository) {
-		return new CommandLineRunner() {			
-			@Override
-			public void run(String... args) throws Exception {
+	CommandLineRunner commandLineRunner(UserRepository userRepository) {								
+			return strings -> {			
 				userRepository.save(new User(1, "Saman", "Kumara", 45000L, 25));
 				userRepository.save(new User(2, "Kamal", "Perera", 35000L, 27));
-			}
-		};
+			};		
 	}
 	
 
